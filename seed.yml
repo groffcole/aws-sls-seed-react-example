@@ -2,6 +2,7 @@ after_deploy:
   - echo "hello, world."
   - cd user_interface
   - pwd
+  - ls -pla
   # - npm install
   # - npm run build
   # - aws s3 sync build/ s3://sls-seed-react-infra-dev
