@@ -3,6 +3,9 @@ after_deploy:
   - cd user_interface
   - pwd
   - ls -pla
-  # - npm install
-  # - npm run build
-  # - aws s3 sync build/ s3://sls-seed-react-infra-dev
+  - npm --prefix user_interface install user_interface
+  - ls -pla
+  - npm --prefix user_interface run build
+  - ls -pla
+  - aws s3 sync user_interface/build/ s3://sls-seed-react-infra-dev
+  - ls -pla
