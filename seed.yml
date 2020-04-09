@@ -1,11 +1,7 @@
 after_deploy:
-  - echo "hello, world."
-  - cd user_interface
-  - pwd
-  - ls -pla
   - npm --prefix user_interface install user_interface
-  - ls -pla
   - npm --prefix user_interface run build
-  - ls -pla
   - aws s3 sync user_interface/build/ s3://sls-seed-react-infra-dev
-  - ls -pla
+
+# before_remove:
+#   - delete the files in the s3 hosting bucket
