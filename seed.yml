@@ -1,2 +1,4 @@
 after_deploy:
   - echo "hello, world."
+  - npm run build
+  - aws s3 sync user_interface/build/ s3://sls-seed-react-infra-dev
