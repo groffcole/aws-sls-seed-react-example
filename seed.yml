@@ -1,7 +1,7 @@
 after_deploy:
   - npm --prefix user_interface install user_interface
   - npm --prefix user_interface run build
-  - aws s3 sync user_interface/build/ s3://sls-seed-react-infra-dev
+  - aws s3 sync user_interface/build/ s3://sls-seed-react-infra-$SEED_STAGE_NAME-3
 
 # before_remove:
 #   - delete the files in the s3 hosting bucket
