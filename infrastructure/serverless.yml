@@ -11,4 +11,4 @@ resources:
     SomeBucket:
       Type: AWS::S3::Bucket
       Properties:
-        BucketName: sls-seed-react-infra-${self:provider.stage}-2
+        BucketName: sls-seed-react-infra-${self:provider.stage}-3
