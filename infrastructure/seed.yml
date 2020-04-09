@@ -1,0 +1,2 @@
+after_deploy:
+  - echo "hello, world."

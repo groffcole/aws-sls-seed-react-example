@@ -1,0 +1,14 @@
+service: sls-seed-react-infra
+
+provider:
+  name: aws
+  region: us-east-1
+  stage: ${opt:stage, "dev"}
+
+
+resources:
+  Resources:
+    NewResource:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: sls-seed-react-infra-${self:provider.stage}
