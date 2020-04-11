@@ -1,7 +1,9 @@
 after_deploy:
   - printenv
+  - pwd
   - ls -pla
   - ls -pla ../
+  - ls -pla ../../
   # - npm --prefix user_interface install user_interface
   # - npm --prefix user_interface run build
   # - aws s3 sync user_interface/build/ s3://sls-seed-react-infra-$SEED_STAGE_NAME-3
