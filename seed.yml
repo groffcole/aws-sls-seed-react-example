@@ -1,6 +1,7 @@
 after_deploy:
   - printenv
   - echo $NODE_10_VERSION >> user_interface/.env
+  - ls -pla user_interface
   - pwd
   - ls -pla
   - ls -pla ../
