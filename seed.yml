@@ -22,8 +22,8 @@ after_deploy:
 #   - echo "After deploy"
 
 
-sls-seed-react-infra-cdn-dev-cdn-id-secret-name
-sls-seed-react-infra-cdn-$SEED_STAGE_NAME-cdn-id-secret-name
+# sls-seed-react-infra-cdn-dev-cdn-id-secret-name
+# sls-seed-react-infra-cdn-$SEED_STAGE_NAME-cdn-id-secret-name
 
 
 
