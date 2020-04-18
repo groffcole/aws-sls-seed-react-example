@@ -15,7 +15,7 @@ Resources:
             ResponsePagePath: "/index.html"
         Origins:
           - Id: ${self:custom.originId}
-            DomainName: ${self.custom.hostingBucketWebsiteUrl}
+            DomainName: ${self:custom.hostingBucketWebsiteUrl}
             CustomOriginConfig:
               HTTPPort: 80
               HTTPSPort: 443
