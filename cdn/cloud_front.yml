@@ -15,12 +15,7 @@ Resources:
             ResponsePagePath: "/index.html"
         Origins:
           - Id: ${self:custom.originId}
-            DomainName:
-              Fn::Select:
-                - "1"
-                - Fn::Split:
-                    - "://"
-                    - Fn::GetAtt: [HostingBucket, WebsiteURL]
+            DomainName: ${self.custom.hostingBucketWebsiteUrl}
             CustomOriginConfig:
               HTTPPort: 80
               HTTPSPort: 443
