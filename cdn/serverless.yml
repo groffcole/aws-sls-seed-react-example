@@ -18,6 +18,5 @@ custom:
   hostingBucketWebsiteUrl: ${cf:${self:custom.hostingStackName}.HostingBucketWebsiteUrl}
 
 resources:
-  # - ${file(./bucket.yml)}
   - ${file(./cloud_front.yml)}
   - ${file(./record_set.yml)}

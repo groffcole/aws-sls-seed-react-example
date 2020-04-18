@@ -10,5 +10,3 @@ custom:
 
 resources:
   - ${file(./bucket.yml)}
-  # - ${file(./cloud_front.yml)}
-  # - ${file(./record_set.yml)}
