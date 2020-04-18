@@ -9,7 +9,7 @@
 
 after_deploy:
   - if [ $SEED_SERVICE_NAME = "sls-seed-react-infra-ui" ]; then npm run build --prefix user_interface; fi
-  - if [ $SEED_SERVICE_NAME = "sls-seed-react-infra-ui" ]; then aws s3 sync user_interface/build/ s3://$SEED_SERVICE_NAME-$SEED_STAGE_NAME --delete; fi
+  - if [ $SEED_SERVICE_NAME = "sls-seed-react-infra-ui" ]; then aws s3 sync user_interface/build/ s3://sls-seed-react-infra-hosting-$SEED_STAGE_NAME --delete; fi
   - if [ $SEED_SERVICE_NAME = "sls-seed-react-infra-ui" ]; then apt-get install jq; fi
   - if [ $SEED_SERVICE_NAME = "sls-seed-react-infra-ui" ]; then echo "export DIST_ID=$(aws secretsmanager get-secret-value --secret-id sample-secret | jq -r '.SecretString')" >> $BASH_ENV; fi  
   - if [ $SEED_SERVICE_NAME = "sls-seed-react-infra-ui" ]; then aws cloudfront create-invalidation --distribution-id $DIST_ID --paths "/*"; fi
