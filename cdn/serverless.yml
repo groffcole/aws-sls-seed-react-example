@@ -14,7 +14,7 @@ custom:
   domain: ${self:custom.domainConfig.${self:provider.stage}, self:custom.domainConfig.other}
   hostedZone: "groffcole.com."
   originId: ${self:service}-${self:provider.stage}-cdn-origin
-  cdnIdSecretName: ${self:service}-${self:provider.stage}-cdn-id-secret-name
+  cdnIdParameterName: ${self:service}-${self:provider.stage}-cdn-id-parameter-name
   hostingBucketWebsiteUrl: ${cf:${self:custom.hostingStackName}.HostingBucketWebsiteUrl}
 
 resources:
