@@ -87,16 +87,3 @@ Resources:
       Name: ${self:custom.cdnIdSecretName}
       SecretString: 
         Ref: HostingBucketCloudFrontDistribution
-
-  HostingBucketCloudFrontDistributionIdParameter:
-    Type: AWS::SSM::Parameter
-    Properties: 
-      # AllowedPattern: String
-      # Description: String
-      Name: ${self:custom.cdnIdParameterName}
-      # Policies: String
-      # Tags: Json
-      # Tier: String
-      Type: String
-      Value:
-        Ref: HostingBucketCloudFrontDistribution
