@@ -51,3 +51,10 @@ Outputs:
         - Fn::Split:
           - "://"
           - Fn::GetAtt: [HostingBucket, WebsiteURL]
+  HostingBucketWebsiteUrl:
+    Value:
+      Fn::Select:
+        - "1"
+        - Fn::Split:
+          - "://"
+          - Fn::GetAtt: [HostingBucket, WebsiteURL]

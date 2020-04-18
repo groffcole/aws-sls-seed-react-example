@@ -6,6 +6,7 @@ provider:
   stage: ${opt:stage, "dev"}
 
 custom:
+  hostingStackName: sls-seed-react-infra-hosting-${self:provider.stage}
   domainConfig:
     other: ${self:provider.stage}.dev.groffcole.com
     dev: apples.dev.groffcole.com
@@ -14,6 +15,7 @@ custom:
   hostedZone: "groffcole.com."
   originId: ${self:service}-${self:provider.stage}-cdn-origin
   cdnIdSecretName: ${self:service}-${self:provider.stage}-cdn-id-secret-name
+  hostingBucketWebsiteUrl: ${cf:${self:custom.hostingStackName}.HostingBucketWebsiteUrl}
 
 resources:
   # - ${file(./bucket.yml)}
