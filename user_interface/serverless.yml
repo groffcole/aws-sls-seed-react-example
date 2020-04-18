@@ -1,0 +1,14 @@
+service: sls-seed-react-infra-ui
+
+provider:
+  name: aws
+  region: us-east-2
+  stage: ${opt:stage, "dev"}
+
+# custom:
+  # hostingBucketName: ${self:service}-${self:provider.stage}
+
+# resources:
+  # - ${file(./bucket.yml)}
+  # - ${file(./cloud_front.yml)}
+  # - ${file(./record_set.yml)}

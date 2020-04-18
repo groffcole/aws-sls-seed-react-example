@@ -1,0 +1,53 @@
+Resources:
+  HostingBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: ${self:custom.hostingBucketName}
+      WebsiteConfiguration:
+        IndexDocument: index.html
+        ErrorDocument: index.html
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        IgnorePublicAcls: true
+        BlockPublicPolicy: false
+        RestrictPublicBuckets: false
+
+  HostingBucketBucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket:
+        Ref: HostingBucket
+      PolicyDocument:
+        Statement:
+          - Effect: "Allow"
+            Principal: "*"
+            Action:
+              - "s3:GetObject"
+            Resource: !Join ["", ["arn:aws:s3:::", Ref: HostingBucket, "/*"]]
+
+Outputs:
+  BucketRef:
+    Value:
+      Ref: HostingBucket
+  BucketArn:
+    Value:
+      Fn::GetAtt: [HostingBucket, Arn]
+  BucketDomainName:
+    Value:
+      Fn::GetAtt: [HostingBucket, DomainName]
+  BucketDualStackDomainName:
+    Value:
+      Fn::GetAtt: [HostingBucket, DualStackDomainName]
+  BucketRegionalDomainName:
+    Value:
+      Fn::GetAtt: [HostingBucket, RegionalDomainName]
+  BucketWebsiteURL:
+    Value:
+      Fn::GetAtt: [HostingBucket, WebsiteURL]
+  BucketSplitWebsiteURL:
+    Value:
+      Fn::Select:
+        - "1"
+        - Fn::Split:
+          - "://"
+          - Fn::GetAtt: [HostingBucket, WebsiteURL]

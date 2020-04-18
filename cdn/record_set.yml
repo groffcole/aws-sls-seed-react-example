@@ -1,0 +1,30 @@
+Resources:
+  DomainAlias:
+    Type: AWS::Route53::RecordSet
+    Properties: 
+      AliasTarget: 
+        DNSName:
+          Fn::GetAtt: [HostingBucketCloudFrontDistribution, DomainName]
+        EvaluateTargetHealth: false
+        HostedZoneId: Z2FDTNDATAQYW2
+      # Comment: String
+      # Failover: String
+      # GeoLocation: 
+      #   GeoLocation
+      # HealthCheckId: String
+      # HostedZoneId: String
+      HostedZoneName: ${self:custom.hostedZone}
+      # MultiValueAnswer: Boolean
+      Name: ${self:custom.domain}
+      # Region: String
+      # ResourceRecords: 
+      #   - String
+      # SetIdentifier: String
+      # TTL: String
+      Type: "A"
+      # Weight: Integer
+
+
+
+# Aliases:
+# - ${self:service}.${self:provider.stage}.groffcole.com

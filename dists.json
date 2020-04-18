@@ -1,0 +1,614 @@
+{
+    "DistributionList": {
+        "Items": [
+            {
+                "Id": "E30LHBFNFBUW1V",
+                "ARN": "arn:aws:cloudfront::803781377449:distribution/E30LHBFNFBUW1V",
+                "Status": "Deployed",
+                "LastModifiedTime": "2020-04-14T03:15:43.397000+00:00",
+                "DomainName": "dubv7sndpjd7i.cloudfront.net",
+                "Aliases": {
+                    "Quantity": 1,
+                    "Items": [
+                        "groffcole.com"
+                    ]
+                },
+                "Origins": {
+                    "Quantity": 1,
+                    "Items": [
+                        {
+                            "Id": "S3-Website-banana-bread.s3-website.us-east-2.amazonaws.com",
+                            "DomainName": "banana-bread.s3-website.us-east-2.amazonaws.com",
+                            "OriginPath": "",
+                            "CustomHeaders": {
+                                "Quantity": 0
+                            },
+                            "CustomOriginConfig": {
+                                "HTTPPort": 80,
+                                "HTTPSPort": 443,
+                                "OriginProtocolPolicy": "http-only",
+                                "OriginSslProtocols": {
+                                    "Quantity": 3,
+                                    "Items": [
+                                        "TLSv1",
+                                        "TLSv1.1",
+                                        "TLSv1.2"
+                                    ]
+                                },
+                                "OriginReadTimeout": 30,
+                                "OriginKeepaliveTimeout": 5
+                            }
+                        }
+                    ]
+                },
+                "OriginGroups": {
+                    "Quantity": 0
+                },
+                "DefaultCacheBehavior": {
+                    "TargetOriginId": "S3-Website-banana-bread.s3-website.us-east-2.amazonaws.com",
+                    "ForwardedValues": {
+                        "QueryString": false,
+                        "Cookies": {
+                            "Forward": "none"
+                        },
+                        "Headers": {
+                            "Quantity": 0
+                        },
+                        "QueryStringCacheKeys": {
+                            "Quantity": 0
+                        }
+                    },
+                    "TrustedSigners": {
+                        "Enabled": false,
+                        "Quantity": 0
+                    },
+                    "ViewerProtocolPolicy": "redirect-to-https",
+                    "MinTTL": 0,
+                    "AllowedMethods": {
+                        "Quantity": 2,
+                        "Items": [
+                            "HEAD",
+                            "GET"
+                        ],
+                        "CachedMethods": {
+                            "Quantity": 2,
+                            "Items": [
+                                "HEAD",
+                                "GET"
+                            ]
+                        }
+                    },
+                    "SmoothStreaming": false,
+                    "DefaultTTL": 86400,
+                    "MaxTTL": 31536000,
+                    "Compress": true,
+                    "LambdaFunctionAssociations": {
+                        "Quantity": 0
+                    },
+                    "FieldLevelEncryptionId": ""
+                },
+                "CacheBehaviors": {
+                    "Quantity": 0
+                },
+                "CustomErrorResponses": {
+                    "Quantity": 1,
+                    "Items": [
+                        {
+                            "ErrorCode": 404,
+                            "ResponsePagePath": "/index.html",
+                            "ResponseCode": "200",
+                            "ErrorCachingMinTTL": 300
+                        }
+                    ]
+                },
+                "Comment": "",
+                "PriceClass": "PriceClass_All",
+                "Enabled": true,
+                "ViewerCertificate": {
+                    "ACMCertificateArn": "arn:aws:acm:us-east-1:803781377449:certificate/64926d72-4165-4552-a19b-c2e71321f741",
+                    "SSLSupportMethod": "sni-only",
+                    "MinimumProtocolVersion": "TLSv1.1_2016",
+                    "Certificate": "arn:aws:acm:us-east-1:803781377449:certificate/64926d72-4165-4552-a19b-c2e71321f741",
+                    "CertificateSource": "acm"
+                },
+                "Restrictions": {
+                    "GeoRestriction": {
+                        "RestrictionType": "none",
+                        "Quantity": 0
+                    }
+                },
+                "WebACLId": "",
+                "HttpVersion": "HTTP2",
+                "IsIPV6Enabled": true,
+                "AliasICPRecordals": [
+                    {
+                        "CNAME": "groffcole.com",
+                        "ICPRecordalStatus": "APPROVED"
+                    }
+                ]
+            },
+            {
+                "Id": "E2J0JU661AT68W",
+                "ARN": "arn:aws:cloudfront::803781377449:distribution/E2J0JU661AT68W",
+                "Status": "Deployed",
+                "LastModifiedTime": "2020-04-14T03:16:38.616000+00:00",
+                "DomainName": "d2u590u3gt2mpj.cloudfront.net",
+                "Aliases": {
+                    "Quantity": 1,
+                    "Items": [
+                        "www.groffcole.com"
+                    ]
+                },
+                "Origins": {
+                    "Quantity": 1,
+                    "Items": [
+                        {
+                            "Id": "S3-Website-banana-bread-www-redirect.s3-website.us-east-2.amazonaws.com",
+                            "DomainName": "banana-bread-www-redirect.s3-website.us-east-2.amazonaws.com",
+                            "OriginPath": "",
+                            "CustomHeaders": {
+                                "Quantity": 0
+                            },
+                            "CustomOriginConfig": {
+                                "HTTPPort": 80,
+                                "HTTPSPort": 443,
+                                "OriginProtocolPolicy": "http-only",
+                                "OriginSslProtocols": {
+                                    "Quantity": 3,
+                                    "Items": [
+                                        "TLSv1",
+                                        "TLSv1.1",
+                                        "TLSv1.2"
+                                    ]
+                                },
+                                "OriginReadTimeout": 30,
+                                "OriginKeepaliveTimeout": 5
+                            }
+                        }
+                    ]
+                },
+                "OriginGroups": {
+                    "Quantity": 0
+                },
+                "DefaultCacheBehavior": {
+                    "TargetOriginId": "S3-Website-banana-bread-www-redirect.s3-website.us-east-2.amazonaws.com",
+                    "ForwardedValues": {
+                        "QueryString": false,
+                        "Cookies": {
+                            "Forward": "none"
+                        },
+                        "Headers": {
+                            "Quantity": 0
+                        },
+                        "QueryStringCacheKeys": {
+                            "Quantity": 0
+                        }
+                    },
+                    "TrustedSigners": {
+                        "Enabled": false,
+                        "Quantity": 0
+                    },
+                    "ViewerProtocolPolicy": "allow-all",
+                    "MinTTL": 0,
+                    "AllowedMethods": {
+                        "Quantity": 2,
+                        "Items": [
+                            "HEAD",
+                            "GET"
+                        ],
+                        "CachedMethods": {
+                            "Quantity": 2,
+                            "Items": [
+                                "HEAD",
+                                "GET"
+                            ]
+                        }
+                    },
+                    "SmoothStreaming": false,
+                    "DefaultTTL": 86400,
+                    "MaxTTL": 31536000,
+                    "Compress": false,
+                    "LambdaFunctionAssociations": {
+                        "Quantity": 0
+                    },
+                    "FieldLevelEncryptionId": ""
+                },
+                "CacheBehaviors": {
+                    "Quantity": 0
+                },
+                "CustomErrorResponses": {
+                    "Quantity": 0
+                },
+                "Comment": "",
+                "PriceClass": "PriceClass_All",
+                "Enabled": true,
+                "ViewerCertificate": {
+                    "ACMCertificateArn": "arn:aws:acm:us-east-1:803781377449:certificate/64926d72-4165-4552-a19b-c2e71321f741",
+                    "SSLSupportMethod": "sni-only",
+                    "MinimumProtocolVersion": "TLSv1.1_2016",
+                    "Certificate": "arn:aws:acm:us-east-1:803781377449:certificate/64926d72-4165-4552-a19b-c2e71321f741",
+                    "CertificateSource": "acm"
+                },
+                "Restrictions": {
+                    "GeoRestriction": {
+                        "RestrictionType": "none",
+                        "Quantity": 0
+                    }
+                },
+                "WebACLId": "",
+                "HttpVersion": "HTTP2",
+                "IsIPV6Enabled": true,
+                "AliasICPRecordals": [
+                    {
+                        "CNAME": "www.groffcole.com",
+                        "ICPRecordalStatus": "APPROVED"
+                    }
+                ]
+            },
+            {
+                "Id": "EMZPTGJL703LH",
+                "ARN": "arn:aws:cloudfront::803781377449:distribution/EMZPTGJL703LH",
+                "Status": "Deployed",
+                "LastModifiedTime": "2020-04-18T00:59:44.369000+00:00",
+                "DomainName": "d2xigb8pk80m8f.cloudfront.net",
+                "Aliases": {
+                    "Quantity": 0
+                },
+                "Origins": {
+                    "Quantity": 1,
+                    "Items": [
+                        {
+                            "Id": "myS3Origin",
+                            "DomainName": "sls-seed-react-infra-cole-417-3.s3-website.us-east-2.amazonaws.com",
+                            "OriginPath": "",
+                            "CustomHeaders": {
+                                "Quantity": 0
+                            },
+                            "CustomOriginConfig": {
+                                "HTTPPort": 80,
+                                "HTTPSPort": 443,
+                                "OriginProtocolPolicy": "http-only",
+                                "OriginSslProtocols": {
+                                    "Quantity": 2,
+                                    "Items": [
+                                        "SSLv3",
+                                        "TLSv1"
+                                    ]
+                                },
+                                "OriginReadTimeout": 30,
+                                "OriginKeepaliveTimeout": 5
+                            }
+                        }
+                    ]
+                },
+                "OriginGroups": {
+                    "Quantity": 0
+                },
+                "DefaultCacheBehavior": {
+                    "TargetOriginId": "myS3Origin",
+                    "ForwardedValues": {
+                        "QueryString": false,
+                        "Cookies": {
+                            "Forward": "none"
+                        },
+                        "Headers": {
+                            "Quantity": 0
+                        },
+                        "QueryStringCacheKeys": {
+                            "Quantity": 0
+                        }
+                    },
+                    "TrustedSigners": {
+                        "Enabled": false,
+                        "Quantity": 0
+                    },
+                    "ViewerProtocolPolicy": "redirect-to-https",
+                    "MinTTL": 0,
+                    "AllowedMethods": {
+                        "Quantity": 2,
+                        "Items": [
+                            "HEAD",
+                            "GET"
+                        ],
+                        "CachedMethods": {
+                            "Quantity": 2,
+                            "Items": [
+                                "HEAD",
+                                "GET"
+                            ]
+                        }
+                    },
+                    "SmoothStreaming": false,
+                    "DefaultTTL": 86400,
+                    "MaxTTL": 31536000,
+                    "Compress": true,
+                    "LambdaFunctionAssociations": {
+                        "Quantity": 0
+                    },
+                    "FieldLevelEncryptionId": ""
+                },
+                "CacheBehaviors": {
+                    "Quantity": 0
+                },
+                "CustomErrorResponses": {
+                    "Quantity": 1,
+                    "Items": [
+                        {
+                            "ErrorCode": 404,
+                            "ResponsePagePath": "/index.html",
+                            "ResponseCode": "200",
+                            "ErrorCachingMinTTL": 300
+                        }
+                    ]
+                },
+                "Comment": "",
+                "PriceClass": "PriceClass_All",
+                "Enabled": true,
+                "ViewerCertificate": {
+                    "CloudFrontDefaultCertificate": true,
+                    "MinimumProtocolVersion": "TLSv1",
+                    "CertificateSource": "cloudfront"
+                },
+                "Restrictions": {
+                    "GeoRestriction": {
+                        "RestrictionType": "none",
+                        "Quantity": 0
+                    }
+                },
+                "WebACLId": "",
+                "HttpVersion": "HTTP2",
+                "IsIPV6Enabled": true
+            },
+            {
+                "Id": "E3UIU01Y8LVIYV",
+                "ARN": "arn:aws:cloudfront::803781377449:distribution/E3UIU01Y8LVIYV",
+                "Status": "Deployed",
+                "LastModifiedTime": "2020-04-18T02:20:54.342000+00:00",
+                "DomainName": "d20ns17m5rsvrz.cloudfront.net",
+                "Aliases": {
+                    "Quantity": 1,
+                    "Items": [
+                        "sls-seed-react-infra-cole-417-4.dev.groffcole.com"
+                    ]
+                },
+                "Origins": {
+                    "Quantity": 1,
+                    "Items": [
+                        {
+                            "Id": "myS3Origin-sls-seed-react-infra-cole-417-4",
+                            "DomainName": "sls-seed-react-infra-cole-417-4.s3-website.us-east-2.amazonaws.com",
+                            "OriginPath": "",
+                            "CustomHeaders": {
+                                "Quantity": 0
+                            },
+                            "CustomOriginConfig": {
+                                "HTTPPort": 80,
+                                "HTTPSPort": 443,
+                                "OriginProtocolPolicy": "http-only",
+                                "OriginSslProtocols": {
+                                    "Quantity": 2,
+                                    "Items": [
+                                        "SSLv3",
+                                        "TLSv1"
+                                    ]
+                                },
+                                "OriginReadTimeout": 30,
+                                "OriginKeepaliveTimeout": 5
+                            }
+                        }
+                    ]
+                },
+                "OriginGroups": {
+                    "Quantity": 0
+                },
+                "DefaultCacheBehavior": {
+                    "TargetOriginId": "myS3Origin-sls-seed-react-infra-cole-417-4",
+                    "ForwardedValues": {
+                        "QueryString": false,
+                        "Cookies": {
+                            "Forward": "none"
+                        },
+                        "Headers": {
+                            "Quantity": 0
+                        },
+                        "QueryStringCacheKeys": {
+                            "Quantity": 0
+                        }
+                    },
+                    "TrustedSigners": {
+                        "Enabled": false,
+                        "Quantity": 0
+                    },
+                    "ViewerProtocolPolicy": "redirect-to-https",
+                    "MinTTL": 0,
+                    "AllowedMethods": {
+                        "Quantity": 2,
+                        "Items": [
+                            "HEAD",
+                            "GET"
+                        ],
+                        "CachedMethods": {
+                            "Quantity": 2,
+                            "Items": [
+                                "HEAD",
+                                "GET"
+                            ]
+                        }
+                    },
+                    "SmoothStreaming": false,
+                    "DefaultTTL": 86400,
+                    "MaxTTL": 31536000,
+                    "Compress": true,
+                    "LambdaFunctionAssociations": {
+                        "Quantity": 0
+                    },
+                    "FieldLevelEncryptionId": ""
+                },
+                "CacheBehaviors": {
+                    "Quantity": 0
+                },
+                "CustomErrorResponses": {
+                    "Quantity": 1,
+                    "Items": [
+                        {
+                            "ErrorCode": 404,
+                            "ResponsePagePath": "/index.html",
+                            "ResponseCode": "200",
+                            "ErrorCachingMinTTL": 300
+                        }
+                    ]
+                },
+                "Comment": "",
+                "PriceClass": "PriceClass_All",
+                "Enabled": true,
+                "ViewerCertificate": {
+                    "ACMCertificateArn": "arn:aws:acm:us-east-1:803781377449:certificate/64926d72-4165-4552-a19b-c2e71321f741",
+                    "SSLSupportMethod": "sni-only",
+                    "MinimumProtocolVersion": "TLSv1.1_2016",
+                    "Certificate": "arn:aws:acm:us-east-1:803781377449:certificate/64926d72-4165-4552-a19b-c2e71321f741",
+                    "CertificateSource": "acm"
+                },
+                "Restrictions": {
+                    "GeoRestriction": {
+                        "RestrictionType": "none",
+                        "Quantity": 0
+                    }
+                },
+                "WebACLId": "",
+                "HttpVersion": "HTTP2",
+                "IsIPV6Enabled": true,
+                "AliasICPRecordals": [
+                    {
+                        "CNAME": "sls-seed-react-infra-cole-417-4.dev.groffcole.com",
+                        "ICPRecordalStatus": "APPROVED"
+                    }
+                ]
+            },
+            {
+                "Id": "E10RA5GW2AIZ2G",
+                "ARN": "arn:aws:cloudfront::803781377449:distribution/E10RA5GW2AIZ2G",
+                "Status": "Deployed",
+                "LastModifiedTime": "2020-04-18T02:56:00.869000+00:00",
+                "DomainName": "d1d4dpy9m61erq.cloudfront.net",
+                "Aliases": {
+                    "Quantity": 1,
+                    "Items": [
+                        "cole-417-5.dev.groffcole.com"
+                    ]
+                },
+                "Origins": {
+                    "Quantity": 1,
+                    "Items": [
+                        {
+                            "Id": "sls-seed-react-infra-cole-417-5-cdn-origin",
+                            "DomainName": "sls-seed-react-infra-cole-417-5.s3-website.us-east-2.amazonaws.com",
+                            "OriginPath": "",
+                            "CustomHeaders": {
+                                "Quantity": 0
+                            },
+                            "CustomOriginConfig": {
+                                "HTTPPort": 80,
+                                "HTTPSPort": 443,
+                                "OriginProtocolPolicy": "http-only",
+                                "OriginSslProtocols": {
+                                    "Quantity": 2,
+                                    "Items": [
+                                        "SSLv3",
+                                        "TLSv1"
+                                    ]
+                                },
+                                "OriginReadTimeout": 30,
+                                "OriginKeepaliveTimeout": 5
+                            }
+                        }
+                    ]
+                },
+                "OriginGroups": {
+                    "Quantity": 0
+                },
+                "DefaultCacheBehavior": {
+                    "TargetOriginId": "sls-seed-react-infra-cole-417-5-cdn-origin",
+                    "ForwardedValues": {
+                        "QueryString": false,
+                        "Cookies": {
+                            "Forward": "none"
+                        },
+                        "Headers": {
+                            "Quantity": 0
+                        },
+                        "QueryStringCacheKeys": {
+                            "Quantity": 0
+                        }
+                    },
+                    "TrustedSigners": {
+                        "Enabled": false,
+                        "Quantity": 0
+                    },
+                    "ViewerProtocolPolicy": "redirect-to-https",
+                    "MinTTL": 0,
+                    "AllowedMethods": {
+                        "Quantity": 2,
+                        "Items": [
+                            "HEAD",
+                            "GET"
+                        ],
+                        "CachedMethods": {
+                            "Quantity": 2,
+                            "Items": [
+                                "HEAD",
+                                "GET"
+                            ]
+                        }
+                    },
+                    "SmoothStreaming": false,
+                    "DefaultTTL": 86400,
+                    "MaxTTL": 31536000,
+                    "Compress": true,
+                    "LambdaFunctionAssociations": {
+                        "Quantity": 0
+                    },
+                    "FieldLevelEncryptionId": ""
+                },
+                "CacheBehaviors": {
+                    "Quantity": 0
+                },
+                "CustomErrorResponses": {
+                    "Quantity": 1,
+                    "Items": [
+                        {
+                            "ErrorCode": 404,
+                            "ResponsePagePath": "/index.html",
+                            "ResponseCode": "200",
+                            "ErrorCachingMinTTL": 300
+                        }
+                    ]
+                },
+                "Comment": "",
+                "PriceClass": "PriceClass_All",
+                "Enabled": true,
+                "ViewerCertificate": {
+                    "ACMCertificateArn": "arn:aws:acm:us-east-1:803781377449:certificate/64926d72-4165-4552-a19b-c2e71321f741",
+                    "SSLSupportMethod": "sni-only",
+                    "MinimumProtocolVersion": "TLSv1.1_2016",
+                    "Certificate": "arn:aws:acm:us-east-1:803781377449:certificate/64926d72-4165-4552-a19b-c2e71321f741",
+                    "CertificateSource": "acm"
+                },
+                "Restrictions": {
+                    "GeoRestriction": {
+                        "RestrictionType": "none",
+                        "Quantity": 0
+                    }
+                },
+                "WebACLId": "",
+                "HttpVersion": "HTTP2",
+                "IsIPV6Enabled": true,
+                "AliasICPRecordals": [
+                    {
+                        "CNAME": "cole-417-5.dev.groffcole.com",
+                        "ICPRecordalStatus": "APPROVED"
+                    }
+                ]
+            }
+        ]
+    }
+}
