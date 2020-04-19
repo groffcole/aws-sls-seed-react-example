@@ -1,12 +1,7 @@
 after_deploy:
-  - if [ $SEED_SERVICE_NAME = "sls-seed-react-infra-ui" ];
-    then
-      npm run build --prefix user_interface
-      aws s3 sync user_interface/build/ s3://sls-seed-react-infra-hosting-$SEED_STAGE_NAME --delete
-      aws cloudfront create-invalidation --distribution-id $(aws secretsmanager get-secret-value --region us-east-2 --secret-id sls-seed-react-infra-cdn-$SEED_STAGE_NAME-cdn-id-secret-name | jq -r '.SecretString') --paths "/*"
-    fi
-#   - if [ $SEED_SERVICE_NAME = "sls-seed-react-infra-ui" ]; then aws s3 sync user_interface/build/ s3://sls-seed-react-infra-hosting-$SEED_STAGE_NAME --delete; fi
-#   - if [ $SEED_SERVICE_NAME = "sls-seed-react-infra-ui" ]; then aws cloudfront create-invalidation --distribution-id $(aws secretsmanager get-secret-value --region us-east-2 --secret-id sls-seed-react-infra-cdn-$SEED_STAGE_NAME-cdn-id-secret-name | jq -r '.SecretString') --paths "/*"; fi
+  - if [ $SEED_SERVICE_NAME = "sls-seed-react-infra-ui" ]; then npm run build --prefix user_interface; fi
+  - if [ $SEED_SERVICE_NAME = "sls-seed-react-infra-ui" ]; then aws s3 sync user_interface/build/ s3://sls-seed-react-infra-hosting-$SEED_STAGE_NAME --delete; fi
+  - if [ $SEED_SERVICE_NAME = "sls-seed-react-infra-ui" ]; then aws cloudfront create-invalidation --distribution-id $(aws secretsmanager get-secret-value --region us-east-2 --secret-id sls-seed-react-infra-cdn-$SEED_STAGE_NAME-cdn-id-secret-name | jq -r '.SecretString') --paths "/*"; fi
 
-# before_remove:
-#   -
+before_remove:
+  - aws s3 rm s3://BUCKET_NAME --recursive sls-seed-react-infra-hosting-$SEED_STAGE_NAME-hosting-bucket
