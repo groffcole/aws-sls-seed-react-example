@@ -6,7 +6,7 @@ provider:
   stage: ${opt:stage, "dev"}
 
 custom:
-  hostingBucketName: ${self:service}-${self:provider.stage}
+  hostingBucketName: ${self:service}-${self:provider.stage}-hosting-bucket
 
 resources:
   - ${file(./bucket.yml)}
