@@ -1,8 +1,10 @@
-service: sls-seed-react-infra-hosting
+service:
+  name: sls-seed-react-infra-hosting
 
 provider:
   name: aws
   region: us-east-2
+  stackName: custom-stack-name
   stage: ${opt:stage, "dev"}
 
 custom:
