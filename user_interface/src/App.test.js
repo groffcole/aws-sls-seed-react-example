@@ -11,3 +11,7 @@ test('renders learn react link', () => {
 test("something something", () => {
   expect(true).toBe(true);
 })
+
+test("something something else", () => {
+  expect(true).toBe(false);
+})
