@@ -4,7 +4,6 @@ service:
 provider:
   name: aws
   region: us-east-2
-  stackName: custom-stack-name
   stage: ${opt:stage, "dev"}
 
 custom:
