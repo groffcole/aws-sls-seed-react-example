@@ -8,6 +8,7 @@ provider:
 
 custom:
   hostingBucketName: ${self:service}-${self:provider.stage}-hosting-bucket
+  custom: some-random-custom-thingy
 
 resources:
   - ${file(./bucket.yml)}
