@@ -1,4 +1,5 @@
-service: sls-seed-react-infra-hosting
+service:
+  name: sls-seed-react-infra-hosting
 
 provider:
   name: aws
@@ -7,6 +8,7 @@ provider:
 
 custom:
   hostingBucketName: ${self:service}-${self:provider.stage}-hosting-bucket
+  custom: some-random-custom-thingy
 
 resources:
   - ${file(./bucket.yml)}
