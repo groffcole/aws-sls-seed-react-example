@@ -3,7 +3,7 @@ service:
 
 provider:
   name: aws
-  region: us-east-2
+  region: us-east-1
   stage: ${opt:stage, "dev"}
 
 custom:
