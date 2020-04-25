@@ -107,4 +107,4 @@ Resources:
               AWS: !Join ["", ["arn:aws:iam::cloudfront:user/CloudFront Origin Access Identity ", Ref: HostingBucketCloudFrontDistribution]]
             Action:
               - "s3:GetObject"
-            Resource: !Join ["", ["arn:aws:s3:::", ${self:custom.hostingBucketName}, "/*"]]
+            Resource: !Join ["", ["arn:aws:s3:::", "${self:custom.hostingBucketName}", "/*"]]
