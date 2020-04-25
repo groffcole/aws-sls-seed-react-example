@@ -1,4 +1,10 @@
 Resources:
+  OriginAccessIdentity:
+    Type: AWS::CloudFront::CloudFrontOriginAccessIdentity
+    Properties:
+      CloudFrontOriginAccessIdentityConfig:
+        Comment: ${self:custom.oaiComment}
+
   HostingBucketCloudFrontDistribution:
     Type: AWS::CloudFront::Distribution
     Properties:
@@ -15,20 +21,21 @@ Resources:
             ResponsePagePath: "/index.html"
         Origins:
           - Id: ${self:custom.originId}
-            DomainName: ${self:custom.hostingBucketWebsiteUrl}
-            CustomOriginConfig:
-              HTTPPort: 80
-              HTTPSPort: 443
-              OriginKeepaliveTimeout: 5
-              OriginProtocolPolicy: "http-only"
-              OriginReadTimeout: 30
+            DomainName: ${self:custom.hostingBucketDomainName}
+            # CustomOriginConfig:
+            #   HTTPPort: 80
+            #   HTTPSPort: 443
+            #   OriginKeepaliveTimeout: 5
+            #   OriginProtocolPolicy: "http-only"
+            #   OriginReadTimeout: 30
               # OriginSSLProtocols:
               #   - String
             # OriginCustomHeaders:
             #   - OriginCustomHeader
             # OriginPath: String
-            # S3OriginConfig:
-            #   S3OriginConfig
+            S3OriginConfig:
+              # OriginAccessIdentity: !Join ["", ["origin-access-identity/cloudfront/", !Ref OriginAccessIdentity]
+              OriginAccessIdentity: !Join ["", ["origin-access-identity/cloudfront/", Ref: OriginAccessIdentity]]
         DefaultCacheBehavior:
           AllowedMethods:
             - "GET"
@@ -87,3 +94,17 @@ Resources:
       Name: ${self:custom.cdnIdSecretName}
       SecretString: 
         Ref: HostingBucketCloudFrontDistribution
+
+  HostingBucketBucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: ${self:custom.hostingBucketName}
+      PolicyDocument:
+        Statement:
+          - Effect: "Allow"
+            Principal:
+              # AWS: arn:aws:iam::cloudfront:user/CloudFront Origin Access Identity E1WQOD7HKQFPCW"
+              AWS: !Join ["", ["arn:aws:iam::cloudfront:user/CloudFront Origin Access Identity ", Ref: HostingBucketCloudFrontDistribution]]
+            Action:
+              - "s3:GetObject"
+            Resource: !Join ["", ["arn:aws:s3:::", ${self:custom.hostingBucketName}, "/*"]]

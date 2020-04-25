@@ -3,58 +3,59 @@ Resources:
     Type: AWS::S3::Bucket
     Properties:
       BucketName: ${self:custom.hostingBucketName}
-      WebsiteConfiguration:
-        IndexDocument: index.html
-        ErrorDocument: index.html
+      # AccessControl: "BucketOwnerFullControl"
+      # WebsiteConfiguration:
+      #   IndexDocument: index.html
+      #   ErrorDocument: index.html
       PublicAccessBlockConfiguration:
         BlockPublicAcls: true
         IgnorePublicAcls: true
-        BlockPublicPolicy: false
-        RestrictPublicBuckets: false
+        BlockPublicPolicy: true
+        RestrictPublicBuckets: true
 
-  HostingBucketBucketPolicy:
-    Type: AWS::S3::BucketPolicy
-    Properties:
-      Bucket:
-        Ref: HostingBucket
-      PolicyDocument:
-        Statement:
-          - Effect: "Allow"
-            Principal: "*"
-            Action:
-              - "s3:GetObject"
-            Resource: !Join ["", ["arn:aws:s3:::", Ref: HostingBucket, "/*"]]
+  # HostingBucketBucketPolicy:
+  #   Type: AWS::S3::BucketPolicy
+  #   Properties:
+  #     Bucket:
+  #       Ref: HostingBucket
+  #     PolicyDocument:
+  #       Statement:
+  #         - Effect: "Allow"
+  #           Principal: "*"
+  #           Action:
+  #             - "s3:GetObject"
+  #           Resource: !Join ["", ["arn:aws:s3:::", Ref: HostingBucket, "/*"]]
 
 Outputs:
-  BucketRef:
+  HostingBucketName:
     Value:
       Ref: HostingBucket
-  BucketArn:
-    Value:
-      Fn::GetAtt: [HostingBucket, Arn]
-  BucketDomainName:
+  # HostingBucketArn:
+  #   Value:
+  #     Fn::GetAtt: [HostingBucket, Arn]
+  HostingBucketDomainName:
     Value:
       Fn::GetAtt: [HostingBucket, DomainName]
-  BucketDualStackDomainName:
-    Value:
-      Fn::GetAtt: [HostingBucket, DualStackDomainName]
-  BucketRegionalDomainName:
-    Value:
-      Fn::GetAtt: [HostingBucket, RegionalDomainName]
-  BucketWebsiteURL:
-    Value:
-      Fn::GetAtt: [HostingBucket, WebsiteURL]
-  BucketSplitWebsiteURL:
-    Value:
-      Fn::Select:
-        - "1"
-        - Fn::Split:
-          - "://"
-          - Fn::GetAtt: [HostingBucket, WebsiteURL]
-  HostingBucketWebsiteUrl:
-    Value:
-      Fn::Select:
-        - "1"
-        - Fn::Split:
-          - "://"
-          - Fn::GetAtt: [HostingBucket, WebsiteURL]
+  # BucketDualStackDomainName:
+  #   Value:
+  #     Fn::GetAtt: [HostingBucket, DualStackDomainName]
+  # BucketRegionalDomainName:
+  #   Value:
+  #     Fn::GetAtt: [HostingBucket, RegionalDomainName]
+  # BucketWebsiteURL:
+  #   Value:
+  #     Fn::GetAtt: [HostingBucket, WebsiteURL]
+  # BucketSplitWebsiteURL:
+  #   Value:
+  #     Fn::Select:
+  #       - "1"
+  #       - Fn::Split:
+  #         - "://"
+  #         - Fn::GetAtt: [HostingBucket, WebsiteURL]
+  # HostingBucketWebsiteUrl:
+  #   Value:
+  #     Fn::Select:
+  #       - "1"
+  #       - Fn::Split:
+  #         - "://"
+  #         - Fn::GetAtt: [HostingBucket, WebsiteURL]
