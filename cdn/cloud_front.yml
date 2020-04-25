@@ -104,7 +104,8 @@ Resources:
           - Effect: "Allow"
             Principal:
               # AWS: arn:aws:iam::cloudfront:user/CloudFront Origin Access Identity E1WQOD7HKQFPCW"
-              AWS: !Join ["", ["arn:aws:iam::cloudfront:user/CloudFront Origin Access Identity ", Ref: HostingBucketCloudFrontDistribution]]
+              # AWS: !Join ["", ["arn:aws:iam::cloudfront:user/CloudFront Origin Access Identity ", Ref: HostingBucketCloudFrontDistribution]]
+              CanonicalUser: !GetAtt OriginAccessIdentity.S3CanonicalUserId
             Action:
               - "s3:GetObject"
-            Resource: !Join ["", ["arn:aws:s3:::", ${self:custom.hostingBucketName}, "/*"]]
+            Resource: !Join ["", ["arn:aws:s3:::", "${self:custom.hostingBucketName}", "/*"]]
