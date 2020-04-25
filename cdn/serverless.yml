@@ -22,4 +22,4 @@ custom:
 
 resources:
   - ${file(./cloud_front.yml)}
-  # - ${file(./record_set.yml)}
+  - ${file(./record_set.yml)}
