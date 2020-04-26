@@ -8,7 +8,7 @@ provider:
 
 custom:
   hostingBucketName: ${self:service}-${self:provider.stage}-hosting-bucket
-  custom: some-random-custom-thingy
+  # redirectingBucketName: ${self:service}-${self:provider.stage}-redirecting-bucket
 
 resources:
   - ${file(./bucket.yml)}

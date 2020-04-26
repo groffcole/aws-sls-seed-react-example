@@ -12,19 +12,36 @@ Resources:
         IgnorePublicAcls: true
         BlockPublicPolicy: true
         RestrictPublicBuckets: true
+  
+  # RedirectingBucket:
+  #   Type: AWS::S3::Bucket
+  #   Properties:
+  #     BucketName: ${self:custom.redirectingBucketName}
+      # AccessControl: "BucketOwnerFullControl"
+      # WebsiteConfiguration:
+      #   RedirectAllRequestsTo:
+      #     HostName: ""
+      #     Protocol: https
+      #   IndexDocument: index.html
+      #   ErrorDocument: index.html
+  #     PublicAccessBlockConfiguration:
+  #       BlockPublicAcls: true
+  #       IgnorePublicAcls: true
+  #       BlockPublicPolicy: false
+  #       RestrictPublicBuckets: false
 
-  # HostingBucketBucketPolicy:
+  # RedirectingBucketBucketPolicy:
   #   Type: AWS::S3::BucketPolicy
   #   Properties:
   #     Bucket:
-  #       Ref: HostingBucket
+  #       Ref: RedirectingBucket
   #     PolicyDocument:
   #       Statement:
   #         - Effect: "Allow"
   #           Principal: "*"
   #           Action:
   #             - "s3:GetObject"
-  #           Resource: !Join ["", ["arn:aws:s3:::", Ref: HostingBucket, "/*"]]
+  #           Resource: !Join ["", ["arn:aws:s3:::", Ref: RedirectingBucket, "/*"]]
 
 Outputs:
   HostingBucketName:
@@ -52,10 +69,10 @@ Outputs:
   #       - Fn::Split:
   #         - "://"
   #         - Fn::GetAtt: [HostingBucket, WebsiteURL]
-  # HostingBucketWebsiteUrl:
+  # RedirectingBucketWebsiteUrl:
   #   Value:
   #     Fn::Select:
   #       - "1"
   #       - Fn::Split:
   #         - "://"
-  #         - Fn::GetAtt: [HostingBucket, WebsiteURL]
+  #         - Fn::GetAtt: [RedirectingBucket, WebsiteURL]
