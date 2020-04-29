@@ -10,5 +10,13 @@ custom:
   hostingBucketName: ${self:service}-${self:provider.stage}-hosting-bucket
   # redirectingBucketName: ${self:service}-${self:provider.stage}-redirecting-bucket
 
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - http:
+          method: get
+          path: hello
+
 resources:
   - ${file(./bucket.yml)}
